@@ -1,4 +1,4 @@
-;
+
 
 
 
@@ -20,8 +20,5 @@ class TwoSum{
 
         return answers;
     }
-    @Test
-    public test{
-        assertEquals(true, true);
-    }
+   
 }
