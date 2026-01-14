@@ -1,5 +1,5 @@
-
-
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * QUESTION: 
@@ -30,4 +30,24 @@ class TwoSum{
         return answers;
     }
    
+
+
+    public int[] twoSumOptimized(int[] nums, int target) {
+        //Will allow us to check if we have found a pair without iterating everytime
+        Map<Integer, Integer> pair = new HashMap<>();
+
+        for(int i = 0; i < nums.length; i++){
+            int current = nums[i];
+            //subtract from target to find complientary key
+            if(pair.containsKey(target - current)){
+                int[] output = {i, pair.get(target - current)};
+                return output;
+
+            }
+            //adding new key value pair to the HashMap
+            pair.put(current, i);
+        }
+        // no pairs found
+        return new int[] {};
+    }
 }
